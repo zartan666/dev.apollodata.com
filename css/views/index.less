@@ -1,0 +1,397 @@
+.page hr {
+	margin: 0;
+}
+
+.nav {
+	.page-margins;
+	.logo {
+		height: 48px;
+		margin-top: 2px;
+		width: auto;
+	}
+}
+
+.list-features {
+	.page-margins;
+	overflow: hidden;
+	text-align: left;
+
+	.item-feature {
+		.std-xpadding;
+
+		&:not(:last-child) { margin-bottom: 1.5rem; }
+
+		@media screen and (min-width: @breakpoint) {
+			&:not(:last-child) { margin-bottom: 0; }
+		}
+
+		.image {
+			display: inline-block;
+			float: left;
+			height: 3rem;
+			margin-bottom: 1rem;
+			width: 3rem;
+			margin-right: 1rem;
+			margin-top: .25rem;
+
+			@media screen and (min-width: @breakpoint) {
+				float: none;
+				height: 4rem;
+				margin-top: 0;
+				width: 4rem;
+			}
+		}
+
+		.meta { overflow: hidden; }
+
+		.title-feature {
+			.font-m2;
+			.type-light;
+			margin-bottom: .5rem;
+		}
+	}
+}
+
+.carousel {
+	.page-margins;
+
+	.picker-carousel {
+		.inline-block-whitespace;
+		.std-xpadding;
+		text-align: left;
+		@media screen and (min-width: @breakpoint) { text-align: center; }
+		margin-bottom: 1.5rem;
+
+		.item-picker {
+			.transition(all 100ms ease-out);
+			cursor: pointer;
+			display: inline-block;
+			height: 4rem;
+			text-align: center;
+			width: 4rem;
+
+			margin-right: .625rem;
+			margin-bottom: .625rem;
+			@media screen and (min-width: @breakpoint) {
+				margin-left: .625rem;
+				margin-right: .625rem;
+			}
+
+			&.active,
+			&:hover {
+				background: @color-mediumlight;
+
+				.title-item { color: @color-darkest; }
+			}
+
+			.image {
+				display: inline-block;
+				height: auto;
+				margin-bottom: .125rem;
+				margin-top: .5rem;
+				vertical-align: top;
+				width: 2rem;
+			}
+
+			.title-item {
+				.transition(all 150ms ease-out);
+				.font-s1;
+				.type-semibold;
+				color: @color-medium;
+			}
+		}
+	}
+
+	.slides-carousel {
+		overflow: hidden;
+		position: relative;
+		text-align: left;
+		background: @color-lightest;
+		box-shadow: rgba(0,0,0,.1) 0 1px 3px 0;
+
+		&:before {
+			@media screen and (min-width: @breakpoint) {
+				.position(absolute, 0,50%,0,auto, 1px);
+			}
+
+			content: '';
+			background: @color-mediumlight;
+			z-index: 0;
+		}
+
+
+		.slide {
+			position: relative;
+			display: none;
+			&.active {
+				display: block;
+			}
+
+			.snippet,
+			.output {
+				.std-xpadding;
+				.std-ypadding;
+				float: left;
+				width: 100%;
+
+				@media screen and (min-width: @breakpoint) {
+					width: 50%;
+				}
+			}
+
+			.snippet {
+				@media screen and (max-width: (@breakpoint - 1px)) {
+					border-bottom: 1px solid @color-mediumlight;
+				}
+
+				.client, .server {
+					display:none;
+					&.active {
+						display: block;
+					}
+				}
+			}
+
+			.topcap {
+				.clearfix;
+				overflow: visible;
+				margin-bottom: 1rem;
+
+				.btn {
+					margin-top: -6px;
+
+					&.active,
+					&:hover { &:extend(.btn.tertiary); }
+					&:not(.active):not(:hover) { color: @color-medium; }
+				}
+
+				.heading {
+					.font-s1;
+					.subheading-caps;
+					color: @color-tertiary;
+					float: left;
+				}
+
+				.cta-try {
+					.font-s2;
+					float: right;
+				}
+			}
+
+			.snippet {
+				pre,
+				code {
+					background: transparent;
+					padding: 0;
+					margin: 0;
+				}
+
+				pre {
+					overflow: visible;
+					width: 100%;
+				}
+
+				code {
+					line-height: 1.5rem;
+				}
+
+				.hljs-line-numbers {
+					.user-select(none);
+					.type-code;
+
+			    color: @color-medium;
+					text-align: right;
+			    -webkit-touch-callout: none;
+					margin-left: -1rem;
+					margin-right: 1rem;
+				}
+			}
+
+			.output {
+				position: relative;
+
+				@media screen and (min-width: @breakpoint) {
+					//triangle styles for desktop
+					&:after,
+					&:before {
+						.transform(rotate(360deg)); //antialiasing webkit
+						.position(absolute, 1.875rem, auto, auto, 0);
+						content: '';
+						display: block;
+
+						//triangle
+						width: 0;
+						height: 0;
+						border-style: solid;
+					}
+
+					&:before {
+						//triangle
+						border-width: 9px 0 9px 9px;
+						border-color: transparent transparent transparent @color-lightest;
+
+						left: -1px;
+						z-index: 1;
+					}
+
+					&:after {
+						border-width: 10px 0 10px 10px;
+						border-color: transparent transparent transparent @color-light;
+
+						margin-top: -1px;
+						z-index: 0;
+					}
+				}
+
+				.output-content {
+					clear: both;
+					margin-top: 4px;
+				}
+			}
+		}
+	}
+}
+
+.consultation-form {
+	.std-xpadding;
+
+	@media screen and (min-width: @breakpoint) {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	//Styling
+	.fieldset-group {
+		margin-bottom: 1rem !important;
+		@media screen and (max-width: (@breakpoint - 1px )) { margin-bottom: 0 !important; }
+
+		.input-symbol {
+			@media screen and (min-width: @breakpoint) {
+				&:first-child { margin-right: 5px; }
+				&:last-child { margin-left: 5px; }
+			}
+		}
+	}
+
+	.input-symbol,
+	.textarea,
+	.select {
+		margin-bottom: .25rem;
+		@media screen and (min-width: @breakpoint) { margin-bottom: 1rem; }
+	}
+
+	input,
+	textarea,
+	select { &:extend(input.secondary); }
+
+	select,
+	.select:before {
+		background: @color-lightest;
+	}
+
+	.select:before {
+		border-top: 1px solid @color-mediumlight;
+		border-bottom: 1px solid @color-mediumlight;
+		border-right: 1px solid @color-mediumlight;
+	}
+
+	//Layout
+	.fieldset-group {
+		.display(flex);
+		.flex-direction(column);
+		@media screen and (min-width: @breakpoint) { .flex-direction(row); }
+
+		margin-bottom: 1px;
+
+		.input-symbol {
+			@media screen and (min-width: @breakpoint) {
+				.flex(1);
+				margin-bottom: 0;
+			}
+
+			&:last-child { margin-left: 1px; }
+		}
+	}
+
+	.input-symbol { vertical-align: top; }
+}
+
+footer {
+	background: @color-light;
+
+	.list-contact {
+		.page-margins;
+
+		overflow: hidden;
+		padding: 1rem 0;
+
+		@media screen and (min-width: @breakpoint) {
+			padding: 3rem 0;
+		}
+
+		.item-contact {
+			.std-xpadding;
+			width: 50%;
+			min-width: 240px;
+			float: left;
+
+			&:not(:last-child) { margin-bottom: 1.5rem; }
+
+			@media screen and (min-width: @breakpoint) {
+				&:not(:last-child) { margin-bottom: 0; }
+
+				min-width: auto;
+				width: 25%;
+			}
+
+
+			.image {
+				font-size: 1.875rem;
+				float: left;
+
+				height: auto;
+				margin-top: 3px;
+				margin-right: 10px;
+				width: 1.875rem;
+			}
+
+
+			.meta {
+				display: block;
+				overflow: hidden;
+
+				.title-contact {
+					.type-semibold;
+					display: block;
+					line-height: 1.1;
+					margin-bottom: .25rem;
+				}
+
+				.desc-contact {
+					.font-s2;
+					.type-normal;
+					color: @color-dark;
+					display: block;
+					line-height: 1.1;
+				}
+			}
+		}
+
+		.icon-email { color: @color-complementary; }
+		.icon-twitter { color: @color-twitter; }
+	}
+
+	.btm-cap {
+		.font-s1;
+		padding: 0 0 1.5rem;
+		text-align: center;
+	}
+}
+
+
+.overlay {
+	input[type="email"] {
+		//could not figure out why inputs werent 40px tall
+		height: 40px;
+	}
+}

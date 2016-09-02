@@ -1,0 +1,31 @@
+.avatar {
+	@avatar-l: 128px;
+	@avatar-s: 48px;
+
+
+	.transform(translate3d(0,0,0));
+	display: inline-block;
+	height: @avatar-s;
+	overflow: hidden;
+	position: relative;
+	vertical-align: top;
+	width: @avatar-s;
+
+	border-radius: @avatar-l;
+
+	@media screen and (min-width: @breakpoint) {
+		height: @avatar-l;
+		width: @avatar-l;
+	}
+
+	&.small { //small avatars adopt mobile-sizing
+		height: @avatar-s;
+		width: @avatar-s;
+	}
+
+	.image {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}

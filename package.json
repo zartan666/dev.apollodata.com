@@ -1,0 +1,25 @@
+{
+  "name": "apollo",
+  "version": "1.0.0",
+  "description": "Available at [apollostack.com](http://apollostack.com).",
+  "main": "gruntfile.js",
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-less": "^1.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-s3": "^0.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apollostack/apollo/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

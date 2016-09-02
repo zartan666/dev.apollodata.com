@@ -1,0 +1,215 @@
+---
+layout: default
+title: Everything you need to use GraphQL
+description: Apollo is an incrementally-adoptable GraphQL data stack that gives you a principled, unified, and scalable API for developing modern apps on top of services.
+---
+
+<header class="home tall">
+  <div class="pitch">
+    <div class="title-page">Everything you need to start using GraphQL</div>
+    <div class="desc-page">
+      <h1>Apollo is an incrementally-adoptable data stack that manages the flow of data between clients and backends.</h1> Based on GraphQL, it gives you a principled, unified, and scalable API for developing modern apps on top of services.
+    </div>
+    <a class="btn primary round" href="{{ site.url_docs }}">Read the docs</a>
+    <a class="btn inverse round js-join-slack" href="#">Join the discussion on Slack</a>
+  </div>
+</header>
+
+<section class="section">
+  <div class="list-features">
+    <div class="item-feature grid-3">
+      <img src="img/illustration-accuracy.svg" class="image" alt="Use GraphQL to build new features without requiring new APIs"/>
+      <div class="meta">
+        <div class="title-feature">All the benefits of GraphQL</div>
+        <div class="desc-feature">
+          Apollo decouples your clients from your services. Build new features without writing new APIs, refactor your backends without breaking your clients, and ship the exact data each client needs over the network.
+        </div>
+      </div>
+    </div>
+    <div class="item-feature grid-3">
+      <img src="img/illustration-convergence.svg" class="image" alt="Apollo is incrementally adoptable"/>
+      <div class="meta">
+        <div class="title-feature">Interoperable &amp; incremental</div>
+        <div class="desc-feature">
+           Use any combination of Angular, React, Meteor, Redux, and anything else JavaScript, with native mobile coming soon. You can start using Apollo in just one component, side-by-side with REST.
+        </div>
+      </div>
+    </div>
+    <div class="item-feature grid-3">
+      <img src="img/illustration-performance.svg" class="image" alt="Apollo includes GraphQL tools"/>
+      <div class="meta">
+        <div class="title-feature">Great developer tools</div>
+        <div class="desc-feature">
+           Apollo comes with helpful tools that let you write your GraphQL schema in a declarative way and mock API data.  Since the Apollo client is built on Redux, you can use the Redux DevTools to understand and debug.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="headline-section">Example lorem ipsum dolor</h2>
+  <div class="desc-section">Lorem ipsum dolor sit amet consectatur vestibulum.Lorem ipsum dolor sit amet consectatur vestibulum Lorem ipsum dolor sit amet consectatur vestibulum.</div>
+
+  <div class="carousel" data-picker>
+    <div class="picker-carousel">
+      <div class="item-picker active" data-target="react">
+        <img src="img/logo-reactjs.svg" class="image"/>
+        <div class="title-item">React</div>
+      </div>
+      <div class="item-picker" data-target="angular">
+        <img src="img/logo-angular.svg" class="image"/>
+        <div class="title-item">Angular</div>
+      </div>
+      <div class="item-picker" data-target="swift">
+        <img src="img/logo-swift.svg" class="image"/>
+        <div class="title-item">Swift</div>
+      </div>
+      <div class="item-picker" data-target="java">
+        <img src="img/logo-android.svg" class="image"/>
+        <div class="title-item">Java</div>
+      </div>
+      <div class="item-picker" data-target="objc">
+        <img src="img/logo-apple.svg" class="image"/>
+        <div class="title-item">Obj-C</div>
+      </div>
+    </div>
+
+    <div class="slides-carousel">
+      <div class="slide active" data-name="react">
+        <div class="snippet" data-picker>
+          <div class="topcap">
+            <div class="btn small round active" data-target="client">Client</div>
+            <div class="btn small round" data-target="server">Server</div>
+          </div>
+          <div class="client active" data-name="client">
+            <pre><code>import ApolloClient, { createNetworkInterface } from 'apollo-client';
+
+            const networkInterface = createNetworkInterface('/graphql');
+
+            networkInterface.use([{
+              applyMiddleware(req, next) {
+                if (!req.options.headers) {
+                  req.options.headers = {};  // Create the header object if needed.
+                }
+                req.options.headers.authorization = localStorage.getItem('token') ? localStorage.getItem('token') : null;
+                next();
+              }
+            }]);
+
+            const client = new ApolloClient({
+              networkInterface,
+            });</code></pre>
+          </div>
+
+          <div class="server" data-name="server">
+            <pre><code class="javascript">import ApolloClient, { createNetworkInterface } from 'apollo-client';
+
+            const networkInterface = createNetworkInterface('/graphql');
+            const token = 'first-token-value';
+            const token2 = 'second-token-value';
+
+            const exampleWare1 = {
+              applyMiddleware(req, next) {
+                if (!req.options.headers) {
+                  req.options.headers = {};  // Create the headers object if needed.
+                }
+                req.options.headers.authorization = token;
+                next();
+              }
+            }
+
+            const exampleWare2 = {
+              applyMiddleware(req, next) {
+                if (!req.options.headers) {
+                  req.options.headers = {};  // Create the headers object if needed.
+                }
+                req.options.headers.authorization = token2;
+                next();
+              }
+            }
+
+            networkInterface.use([exampleWare1, exampleWare2]);
+
+            const client = new ApolloClient({
+              networkInterface,
+            });</code></pre>
+          </div>
+        </div>
+        <div class="output">
+          <div class="topcap">
+            <div class="heading">Output</div>
+            <a class="cta-try link primary">Try it out<span class="icon-arrow-right"></span></a>
+          </div>
+          <div class="output-content">
+            networkInterface (Optional, defaults to an HTTP interface that points to /graphql) The network interface to use when sending GraphQL queries to the server. Create this using createNetworkInterface, or make a totally custom one.
+            dataIdFromObject (Optional) A function to use during result normalization to determine the IDs of result objects. Function signature should be (result: Object) => string. Learn more about normalization.
+            reduxRootKey (Optional, 'apollo' by default) The key under which Apollo data will be stored in the Redux store. Read more about integrating with Redux. If you aren’t integrating with an existing Redux store, don’t worry about this.
+            shouldBatch (Optional, false by default) A boolean value that specifies whether Apollo Client should batch queries together into one request. If you pass this option, the network interface must support batching. Read more about query batching.
+          </div>
+        </div>
+      </div>
+
+      <div class="slide" data-name="angular">
+        <div class="snippet" data-picker>
+          <div class="topcap">
+            <div class="btn small round active" data-target="client">Client</div>
+            <div class="btn small round" data-target="server">Server</div>
+          </div>
+          <div class="client active"  data-name="client">
+            <pre><code>import ApolloClient, { createNetworkInterface } from 'apollo-client';
+
+            ANGULAR CODE!</code></pre>
+          </div>
+
+          <div class="server"  data-name="server">
+            <pre><code class="javascript">import ApolloClient, { createNetworkInterface } from 'apollo-client';
+
+            const networkInterface = createNetworkInterface('/graphql');
+            const token = 'first-token-value';
+            const token2 = 'second-token-value';
+
+            const exampleWare1 = {
+              applyMiddleware(req, next) {
+                if (!req.options.headers) {
+                  req.options.headers = {};  // Create the headers object if needed.
+                }
+                req.options.headers.authorization = token;
+                next();
+              }
+            }
+
+            const exampleWare2 = {
+              applyMiddleware(req, next) {
+                if (!req.options.headers) {
+                  req.options.headers = {};  // Create the headers object if needed.
+                }
+                req.options.headers.authorization = token2;
+                next();
+              }
+            }
+
+            networkInterface.use([exampleWare1, exampleWare2]);
+
+            const client = new ApolloClient({
+              networkInterface,
+            });</code></pre>
+          </div>
+        </div>
+        <div class="output">
+          <div class="topcap">
+            <div class="heading">Output</div>
+            <a class="cta-try link primary">Try it out<span class="icon-arrow-right"></span></a>
+          </div>
+          <div class="output-content">
+            networkInterface (Optional, defaults to an HTTP interface that points to /graphql) The network interface to use when sending GraphQL queries to the server. Create this using createNetworkInterface, or make a totally custom one.
+            dataIdFromObject (Optional) A function to use during result normalization to determine the IDs of result objects. Function signature should be (result: Object) => string. Learn more about normalization.
+            reduxRootKey (Optional, 'apollo' by default) The key under which Apollo data will be stored in the Redux store. Read more about integrating with Redux. If you aren’t integrating with an existing Redux store, don’t worry about this.
+            shouldBatch (Optional, false by default) A boolean value that specifies whether Apollo Client should batch queries together into one request. If you pass this option, the network interface must support batching. Read more about query batching.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

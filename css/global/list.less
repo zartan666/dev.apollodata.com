@@ -1,0 +1,123 @@
+.list {
+  overflow: hidden;
+
+  > * {
+    .font-s2;
+    .type-normal;
+    .transition(all 200ms ease-out);
+		padding: .625rem 2rem .625rem 1.25rem;
+		border-bottom: 1px solid @color-light;
+		display: block;
+		position: relative;
+
+		background-color: @color-lightest;
+
+		&:last-child { border-bottom: none !important; }
+
+		&:hover {
+			.background-image(
+				linear-gradient(top, lighten(@color-complementary, 52%) 0%, lighten(@color-complementary, 56%) 100%)
+			);
+			border-bottom: 1px solid @color-mediumlight;
+			cursor: pointer;
+
+			[class*="icon-"] { color: @color-mediumdark; }
+		}
+
+		[class*="icon-"] { right: 1rem; }
+  }
+
+  &.small > * {
+		.font-s1;
+		padding: .5rem 1.75rem .5rem 1rem;
+
+		[class*="icon-"] { right: .75rem; }
+  }
+
+  > a {
+    color: @color-darkest;
+    &:active { color: darken(@color-darkest, 5%); }
+  }
+
+  [class*="icon-"] {
+    .transition(all 200ms ease-out);
+    .transform(translateY(-50%));
+    line-height: 1rem;
+		position: absolute;
+		top: 50%;
+
+    color: @color-medium;
+  }
+
+  .monospace {
+    .type-code;
+    .type-semibold;
+    color: @color-primary;
+  }
+
+  .truncate {
+    .ellipsized;
+    .type-semibold;
+    display: block;
+  }
+}
+
+.list-users-wrapper {
+  .page-margins;
+  .std-xpadding;
+}
+
+.list-users {
+  .clearfix;
+  .inline-block-whitespace;
+
+  margin: 0 -1rem 1rem;
+  @media screen and (min-width: @breakpoint) {
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .item-user {
+    display: block;
+    overflow: auto;
+    @media screen and (min-width: @breakpoint) {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    margin: 0 1rem 1rem;
+    @media screen and (min-width: @breakpoint) { margin-bottom: 1.5rem; }
+
+    .avatar {
+      float: left;
+      margin-right: 1rem;
+
+      @media screen and (min-width: @breakpoint) {
+        float: none;
+        margin-bottom: .5rem;
+        margin-right: 0;
+      }
+    }
+
+    .meta {
+      overflow: hidden;
+      display: block;
+    }
+
+    .nicename {
+      .type-semibold;
+      display: block;
+    }
+
+    .username {
+      .font-s2;
+      display: block;
+      line-height: 1;
+
+      &:not(.link) {
+        .type-semibold;
+        color: @color-mediumdark;
+      }
+    }
+  }
+}
