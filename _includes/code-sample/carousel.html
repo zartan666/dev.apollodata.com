@@ -1,0 +1,53 @@
+<div class="carousel" data-picker>
+  <div class="picker-carousel">
+    <div class="item-picker active" data-target="react">
+      <img src="img/logo-reactjs.svg" class="image"/>
+      <div class="title-item">React</div>
+    </div>
+    <div class="item-picker" data-target="angular">
+      <img src="img/logo-angular.svg" class="image"/>
+      <div class="title-item">Angular</div>
+    </div>
+    <div class="item-picker" data-target="swift">
+      <img src="img/logo-swift.svg" class="image"/>
+      <div class="title-item">Swift</div>
+    </div>
+    <div class="item-picker" data-target="java">
+      <img src="img/logo-android.svg" class="image"/>
+      <div class="title-item">Java</div>
+    </div>
+    <div class="item-picker" data-target="objective-c">
+      <img src="img/logo-apple.svg" class="image"/>
+      <div class="title-item">Obj-C</div>
+    </div>
+  </div>
+
+  <div class="slides-carousel">
+    {% include code-sample/slide.html
+      step=include.step
+      language="react"
+      link-demo="http://github.com/apollostack/frontpage-react-app"
+      active="active"
+    %}
+
+    {% include code-sample/slide-empty.html
+      language="angular"
+      link-demo="test.com"
+    %}
+
+    {% include code-sample/slide-empty.html
+      language="swift"
+      link-demo="github.com"
+    %}
+
+    {% include code-sample/slide-empty.html
+      language="java"
+      link-demo="github.com"
+    %}
+
+    {% include code-sample/slide-empty.html
+      language="objective-c"
+      link-demo="github.com"
+    %}
+  </div>
+</div>
