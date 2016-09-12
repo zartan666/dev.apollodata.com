@@ -78,21 +78,22 @@
 	}
 
 	&.ancillary {
-		box-shadow: @color-medium 0 0 0 1px inset;
-		color: @color-dark;
+		box-shadow: @color-primary 0 0 0 1px inset;
+		color: @color-primary;
 
 		letter-spacing: 0;
 		text-indent: 0;
 		text-transform: none;
 
 		&:hover {
-			color: @color-dark;
+			color: darken(@color-primary, 3%);
+			cursor: pointer;
 		}
 
 		&.active, //.active is paired used in .btn-group.toggle
 		&:active {
-			box-shadow: @color-mediumdark 0 0 0 3em inset;
-			background-color: @color-medium;
+			box-shadow: @color-primary 0 0 0 3em inset;
+			background-color: @color-primary;
 			color: @color-lightest;
 		}
 	}
