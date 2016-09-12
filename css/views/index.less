@@ -175,15 +175,21 @@
 				}
 
 				.heading {
-					.font-s1;
+					.font-s2;
 					.subheading-caps;
 					color: @color-tertiary;
 					float: left;
 				}
 
 				.cta-try {
-					.font-s2;
-					float: right;
+					.font-s1;
+					display: inline-block;
+					vertical-align: top;
+					margin-left: 20px;
+
+					.language {
+						text-transform: capitalize;
+					}
 				}
 			}
 
@@ -250,6 +256,10 @@
 						margin-top: -1px;
 						z-index: 0;
 					}
+				}
+
+				.cta-try {
+					float: right;
 				}
 
 				.output-content {
