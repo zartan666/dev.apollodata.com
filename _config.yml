@@ -20,7 +20,10 @@ url: "http://dev-home.apollodata.com" # the base hostname & protocol for your si
 markdown: kramdown
 
 # Sites
-url_docs: http://dev.apollostack.com/react
+url_projects_react: http://dev.apollodata.com/react
+url_projects_angular: http://dev.apollodata.com/angular
+url_projects_corejs: http://dev.apollodata.com/corejs
+url_community: http://dev.apollodata.com/community
 url_blog: https://medium.com/apollo-stack
 url_slack: http://slack.apollostack.com
 
