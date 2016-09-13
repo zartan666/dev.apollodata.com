@@ -22,6 +22,7 @@ markdown: kramdown
 # Sites
 url_projects_react: http://dev.apollodata.com/react
 url_projects_angular: http://dev.apollodata.com/angular
+url_projects_swift: http://dev.apollodata.com/swift
 url_projects_corejs: http://dev.apollodata.com/corejs
 url_community: http://dev.apollodata.com/community
 url_blog: https://medium.com/apollo-stack
