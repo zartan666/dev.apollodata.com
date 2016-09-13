@@ -66,48 +66,19 @@
 	padding-bottom: 3rem;
 
 	.picker-carousel {
-		.inline-block-whitespace;
 		.std-xpadding;
 		text-align: left;
 		@media screen and (min-width: @breakpoint) { text-align: center; }
 		margin-bottom: 1.5rem;
 
-		.item-picker {
-			.transition(all 100ms ease-out);
+		.btn {
+			color: @color-mediumdark;
 			cursor: pointer;
-			display: inline-block;
-			height: 4rem;
-			text-align: center;
-			width: 4rem;
-
-			margin-right: .625rem;
-			margin-bottom: .625rem;
-			@media screen and (min-width: @breakpoint) {
-				margin-left: .625rem;
-				margin-right: .625rem;
-			}
 
 			&.active,
 			&:hover {
-				background: @color-mediumlight;
-
-				.title-item { color: @color-darkest; }
-			}
-
-			.image {
-				display: inline-block;
-				height: auto;
-				margin-bottom: .125rem;
-				margin-top: .5rem;
-				vertical-align: top;
-				width: 2rem;
-			}
-
-			.title-item {
-				.transition(all 150ms ease-out);
-				.font-s1;
-				.type-semibold;
-				color: @color-medium;
+				background-color: @color-mediumlight;
+				color: @color-darkest;
 			}
 		}
 	}
