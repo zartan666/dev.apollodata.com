@@ -1,15 +1,9 @@
 .nav {
-	.page-margins;
 	.std-xpadding;
 	.transform(translate3d(0,0,0));
+	.position(absolute, 0, 0, auto, 0, auto, 4rem);
 	text-align: center;
 	z-index: 3;
-
-  .position(absolute, .5rem, 0, auto, 0, auto, 3rem);
-	@media screen and (min-width: @breakpoint) {
-		top: 2rem;
-		height: 4rem;
-	}
 
   &.dark {
     color: @color-darker;
@@ -19,13 +13,14 @@
 
   &.light {
     color: @color-lightest;
+		border-bottom: 1px solid rgba(255,255,255,.1);
+
 		a { .link(@color-lightest); }
     svg { fill: @color-lightest; }
   }
 
   .nav-group {
-    .position(absolute, 0, auto, auto, 0);
-		@media screen and (min-width: @breakpoint) { top: .5rem; }
+    .position(absolute, .5rem, auto, auto, 0);
 		.std-xpadding;
     z-index: 1;
 
@@ -37,7 +32,6 @@
 		.logo {
 			display: inline-block;
 			height: 48px;
-			margin-top: 2px;
 			width: auto;
 			vertical-align: top;
 		}
@@ -45,6 +39,7 @@
 		.logo-subbrand {
 			display: inline-block;
 			height: 15px;
+			margin-top: -3px;
 			vertical-align: middle;
 		}
   }
