@@ -90,22 +90,23 @@
 		background: @color-lightest;
 		box-shadow: rgba(0,0,0,.1) 0 1px 3px 0;
 
-		&:before {
-			@media screen and (min-width: @breakpoint) {
-				.position(absolute, 0,50%,0,auto, 1px);
-			}
-
-			content: '';
-			background: @color-mediumlight;
-			z-index: 0;
-		}
-
-
 		.slide {
 			position: relative;
+			overflow: hidden;
+
+			// Toggle into view
 			display: none;
-			&.active {
-				display: block;
+
+			&.active { display: block; }
+
+			&:not(.empty):before {
+				@media screen and (min-width: @breakpoint) {
+					.position(absolute, 0,50%,0,auto, 1px);
+				}
+
+				background: @color-mediumlight;
+				content: '';
+				z-index: 0;
 			}
 
 			.snippet,
@@ -120,7 +121,8 @@
 				}
 			}
 
-			.snippet {
+			.snippet,
+			.output {
 				@media screen and (max-width: (@breakpoint - 1px)) {
 					border-bottom: 1px solid @color-mediumlight;
 				}
@@ -131,6 +133,25 @@
 						display: block;
 					}
 				}
+			}
+
+			.contribute {
+				margin: 0 auto;
+				padding: 6rem 0;
+				text-align: center;
+				width: 50%;
+
+				.title-contribute {
+					.font-m2;
+					.type-light;
+					margin-bottom: .5rem;
+				}
+
+				.message-contribute {
+					margin-bottom: .75rem;
+				}
+
+				.language { text-transform: capitalize; }
 			}
 
 			.topcap {
