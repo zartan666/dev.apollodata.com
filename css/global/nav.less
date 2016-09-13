@@ -1,11 +1,15 @@
 .nav {
+	.page-margins;
 	.std-xpadding;
 	.transform(translate3d(0,0,0));
 	text-align: center;
 	z-index: 3;
 
-  .position(absolute, 2rem, 0, auto, 0, auto, 3rem);
-	@media screen and (min-width: @breakpoint) { height: 4rem; }
+  .position(absolute, .5rem, 0, auto, 0, auto, 3rem);
+	@media screen and (min-width: @breakpoint) {
+		top: 2rem;
+		height: 4rem;
+	}
 
   &.dark {
     color: @color-darker;
@@ -19,15 +23,6 @@
     svg { fill: @color-lightest; }
   }
 
-	svg {
-		position: relative;
-		top: .75rem;
-		@media screen and (min-width: @breakpoint) { top: 1.25rem; }
-		height: 10px;
-
-		.subheading-caps(center);
-  }
-
   .nav-group {
     .position(absolute, 0, auto, auto, 0);
 		@media screen and (min-width: @breakpoint) { top: .5rem; }
@@ -38,6 +33,20 @@
       left: auto;
       right: 0;
     }
+
+		.logo {
+			display: inline-block;
+			height: 48px;
+			margin-top: 2px;
+			width: auto;
+			vertical-align: top;
+		}
+
+		.logo-subbrand {
+			display: inline-block;
+			height: 15px;
+			vertical-align: middle;
+		}
   }
 
   .nav-item {
@@ -68,10 +77,5 @@
       line-height: 1;
       vertical-align: text-top;
     }
-
-		.account-menu-wrapper {
-			display: inline-block; //necessary for accounts loading state
-			margin-top: .75rem;
-		}
   }
 }
