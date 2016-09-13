@@ -38,6 +38,11 @@ $(function() {
     $('.layout').addClass('overlay-open slack');
   }
 
+  $('.js-show-menu').click(function(e) {
+    e.preventDefault();
+    $('.layout').addClass('overlay-open menu');
+  });
+
   $('.js-join-newsletter').click(function(e) {
     e.preventDefault();
     $('.layout').addClass('overlay-open contact');
