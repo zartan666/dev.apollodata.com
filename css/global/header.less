@@ -12,7 +12,7 @@ header {
 		@media screen and (min-width: @breakpoint) {
 			padding-top: 9rem;
 			height: 40%;
-			min-height: 600px;
+			min-height: 540px;
 		}
 	}
 
@@ -59,7 +59,7 @@ header {
 	.desc-page {
 		.font-s3;
 		line-height: 26px;
-		margin-bottom: 1rem;
+		margin-bottom: 1.25rem;
 
 		h1 {
 			font-size: inherit;
@@ -96,10 +96,56 @@ header.home {
 
 		@media screen and (min-width: @breakpoint) {
 			position: absolute;
-			.transform(translateY(-45%));
+			.transform(translateY(-40%));
 			top:50%;
 			max-width: 600px;
 			width: 50%;
+		}
+	}
+
+	.title-guides {
+		.subheading-caps;
+		.font-s1;
+		margin-bottom: .75rem;
+	}
+
+	.picker-guides {
+		.inline-block-whitespace;
+		text-align: left;
+		margin-bottom: 1.5rem;
+
+		.item-guide {
+			.transition(all 200ms ease-out);
+			box-shadow: rgba(255,255,255, .3) 0 0 0 1px inset;
+			cursor: pointer;
+			display: inline-block;
+			height: 4rem;
+			margin-right: 15px;
+			text-align: center;
+			vertical-align: top;
+			width: 4rem;
+
+			&:hover {
+				box-shadow: fade(@color-primary, 50%) 0 0 7px 0, fade(@color-primary, 100%) 0 0 0 1px inset ;
+
+				.title-item { color: @color-lightest; }
+			}
+
+			.image {
+				display: inline-block;
+				height: auto;
+				margin-bottom: .125rem;
+				margin-top: .5rem;
+				vertical-align: top;
+				width: 2rem;
+			}
+
+			.title-item {
+				.transition(all 150ms ease-out);
+				.font-s1;
+				.type-semibold;
+				color: @color-medium;
+			}
 		}
 	}
 
