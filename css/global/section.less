@@ -2,8 +2,7 @@
 	.clearfix;
 	padding: 2rem 0;
 
-	background-color: @color-lightest;
-	&:nth-child(even) { background-color: @color-lighter; }
+	background-color: @color-lighter;
 
 	@media screen and (min-width: @breakpoint) {
 		padding: 3rem 0;
@@ -35,4 +34,33 @@
 			margin-bottom: 1.5rem;
 		}
 	}
+}
+
+.section.features {
+	background-color: @color-lightest;
+
+	@media screen and (min-width: @breakpoint) {
+		padding: 4rem 0;
+		text-align: center;
+	}
+
+	.headline-section {
+		.font-l2;
+		@media screen and (min-width: @breakpoint) { .font-l3; }
+	}
+
+	.desc-section {
+		.font-s3;
+		line-height: 26px;
+
+		@media screen and (min-width: @breakpoint) {
+			.font-m2;
+			.type-light;
+			line-height: 28px;
+		}
+	}
+}
+
+.section.get-started {
+	background-color: @color-accent-cooler;
 }

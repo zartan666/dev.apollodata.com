@@ -71,6 +71,60 @@
 	}
 }
 
+
+.title-guides {
+	.subheading-caps(center);
+	.font-s2;
+	margin-bottom: 1rem;
+}
+
+.picker-guides {
+	.inline-block-whitespace;
+	text-align: center;
+
+	.item-guide {
+		.transition(all 200ms ease-out);
+		background: @color-lighter;
+		cursor: pointer;
+		display: inline-block;
+		height: 5rem;
+		margin-right: 10px;
+		margin-left: 10px;
+		margin-bottom: 10px;
+		text-align: center;
+		vertical-align: top;
+		width: 90px;
+
+		&:hover {
+			box-shadow: fade(@color-primary, 50%) 0 0 7px 0, fade(@color-primary, 100%) 0 0 0 1px inset ;
+		}
+
+		.image {
+			display: inline-block;
+			height: auto;
+			margin-bottom: .5rem;
+			margin-top: 1rem;
+			vertical-align: top;
+			width: 2rem;
+		}
+
+		.title-item {
+			.transition(all 150ms ease-out);
+			.font-s1;
+			.type-semibold;
+			color: @color-darkest;
+			display: block;
+			line-height: 1;
+			text-indent: 6px;
+
+			.icon-arrow-right {
+				font-size: 8px;
+				opacity: .8;
+			}
+		}
+	}
+}
+
 .carousel {
 	.page-margins;
 
