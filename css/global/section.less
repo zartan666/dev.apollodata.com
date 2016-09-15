@@ -3,7 +3,7 @@
 	padding: 2rem 0;
 
 	background-color: @color-lightest;
-	& + .section { background-color: @color-lighter; }
+	&:nth-child(even) { background-color: @color-lighter; }
 
 	@media screen and (min-width: @breakpoint) {
 		padding: 3rem 0;
