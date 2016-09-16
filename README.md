@@ -1,5 +1,5 @@
 # Apollo site
-Available at [apollostack.com](http://apollostack.com).
+Available at [dev.apollodata.com](http://dev.apollodata.com).
 
 ## How to run the site
 1. Install jekyll with `gem install jekyll`
