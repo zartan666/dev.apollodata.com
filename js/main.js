@@ -1,8 +1,6 @@
 $(function() {
   FastClick.attach(document.body);
 
-  $('.page').focus();
-
   $('.tooltip-trigger').each(function() {
       $(this).qtip({
         content: {
