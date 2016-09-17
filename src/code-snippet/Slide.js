@@ -50,7 +50,7 @@ export default class Slide extends Component {
             </a>
       		</div>
       		<div className="output-content">
-      			<iframe src={`http://dev.apollodata.com/frontpage-${library}-app-step${operation}/`}></iframe>
+      			<iframe src={`http://dev.apollodata.com/frontpage-${library}-app-${operation}/`}></iframe>
       		</div>
       	</div>
       </div>
