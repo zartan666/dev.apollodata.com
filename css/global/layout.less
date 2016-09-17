@@ -1,14 +1,8 @@
 @transition-time: 300ms;
+@panel-width-tablet: 64px;
+@sidebar-width: 260px;
 
 .layout {
-  &.overlay-open {
-    .page {
-      opacity: 1;
-      .transform( scale3d(0.85, 0.85, 1) );
-      .transition( all @transition-time * 2 ease-out);
-    }
-  }
-
   &.overlay-open.menu .overlay.overlay-screen-menu {
     opacity: 1;
     z-index: 9;
@@ -23,6 +17,16 @@
     opacity: 1;
     z-index: 9;
   }
+
+  &.sidebar-visible {
+    .content {
+      .transform(translateX(@sidebar-width));
+
+      @media screen and (min-width: (@breakpoint * 1.5)) {
+        .transform(translateX(0));
+      }
+    }
+  }
 }
 
 .overlay-screen-menu,
@@ -36,20 +40,37 @@
   //do not add backface to this, scrolling will not register on the overlay
 }
 
-.page {
-  .position(absolute, 0, 0, 0, 0);
-  .transform( scale3d(1,1,1) );
-  .transition( all @transition-time ease-out);
+.nav {
+  .position(fixed, 0,0,auto, 0, auto, @panel-width-tablet);
+  opacity: 1;
+  z-index: 3;
+}
 
-  background: @color-lightest;
-  z-index: 1;
-
+.sidebar {
+  .position(fixed, @panel-width-tablet, auto, 0, 0, @sidebar-width);
+  background: @color-lighter;
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  z-index: 1;
+
+  @media screen and (min-width: @breakpoint) {
+    top: @panel-width-tablet;
+  }
 }
 
+.content {
+  .transition(all 300ms @easing);
+  .transform(translateX(0));
+  padding-top: @panel-width-tablet;
+  position: relative;
+  z-index: 2;
+}
+
+
 body {
-  background: @color-darkest;
-  overflow: hidden;
+  background: @color-lightest;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }

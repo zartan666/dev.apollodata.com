@@ -1,7 +1,14 @@
 <div class="nav dark">
   <div class="nav-group">
+    <div class="nav-item show-mobile">
+      <span class="js-sidebar-toggle ">
+        <span class="icon-menu"></span>
+      </span>
+    </div>
     <div class="nav-item">
-      <a href="/"><img src="img/logo-apollo-space-left.svg" class="logo"/><img src="img/logo-apollo-subbrands-developers-space.svg" class="logo-subbrand" alt="Developers"/></a>
+      <a class="logo-wrapper" href="/">
+        <img src="img/logo-apollo-space-left.svg" class="logo"/><img src="img/logo-apollo-subbrands-developers-space.svg" class="logo-subbrand" alt="Developers"/>
+      </a>
     </div>
   </div>
 
@@ -21,7 +28,7 @@
     <div class="nav-item show-desktop">
       <a class="link" href="{{ site.url_projects_vanillajs }}">Vanilla JS</a>
     </div>
-    <div class="nav-item show-desktop">
+    <div class="nav-item show-desktop separator">
       <a class="link" href="{{ site.url_projects_server }}">Servers</a>
     </div>
     <div class="nav-item show-desktop">
@@ -30,8 +37,8 @@
     <div class="nav-item show-desktop">
       <a class="link" href="{{ site.url_community }}">Community</a>
     </div>
-    <div class="nav-item show-mobile">
+    <!-- <div class="nav-item show-mobile">
       <a class="link js-show-menu" href=""><span class="icon-menu"></span></a>
-    </div>
+    </div> -->
   </div>
 </div>

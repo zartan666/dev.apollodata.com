@@ -5,8 +5,11 @@
     <div class="layout">
       <div class="page" tabindex="1">
         {% include nav.html %}
-				{{ content }}
-        {% include footer.html %}
+        {% include sidebar.html %}
+        <div class="content">
+  				{{ content }}
+          {% include footer.html %}
+        </div>
       </div>
 
       {% include overlays.html %}

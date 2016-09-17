@@ -7,6 +7,7 @@
 
 # Site settings
 title: Apollo
+subtitle: Developer
 email:
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -23,13 +24,14 @@ markdown: kramdown
 url_projects_react: http://dev.apollodata.com/react
 url_projects_reactnative: http://dev.apollodata.com/react
 url_projects_angular: http://dev.apollodata.com/angular
-url_projects_swift: http://dev.apollodata.com/swift
+url_projects_ios: http://dev.apollodata.com/ios
 url_projects_android: http://dev.apollodata.com/android
 url_projects_server: http://dev.apollodata.com/server
 url_projects_vanillajs: http://dev.apollodata.com/vanillajs
 url_community: http://dev.apollodata.com/community
 url_blog: https://medium.com/apollo-stack
 url_slack: http://slack.apollostack.com
+
 
 # Social
 twitter_username: apollostack

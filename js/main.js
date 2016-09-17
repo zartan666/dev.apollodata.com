@@ -38,9 +38,9 @@ $(function() {
     $('.layout').addClass('overlay-open slack');
   }
 
-  $('.js-show-menu').click(function(e) {
+  $('.js-sidebar-toggle').click(function(e) {
     e.preventDefault();
-    $('.layout').addClass('overlay-open menu');
+    $('.layout').toggleClass('sidebar-visible');
   });
 
   $('.js-join-newsletter').click(function(e) {
