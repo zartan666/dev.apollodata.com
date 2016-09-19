@@ -23,7 +23,11 @@
 			<a class="cta-try link primary" href="http://dev.apollodata.com/{{include.language}}" target="_blank"><span class="language">{{include.language}}</span> docs<span class="icon-arrow-right"></span></a>
 		</div>
 		<div class="output-content">
-			<iframe src="http://dev.apollodata.com/frontpage-{{include.language}}-app-step{{include.step}}/"></iframe>
+			{% if include.image %}
+				<img src={{include.image}}></img>
+			{% else %}
+				<iframe src="http://dev.apollodata.com/frontpage-{{include.language}}-app-step{{include.step}}/"></iframe>
+			{% endif %}
 		</div>
 	</div>
 </div>

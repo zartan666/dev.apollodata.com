@@ -3,6 +3,9 @@
     <div class="btn small round active" data-target="react">
       <div class="title-item">React</div>
     </div>
+    <div class="btn small round" data-target="react-native">
+      <div class="title-item">React Native</div>
+    </div>
     <div class="btn small round" data-target="angular">
       <div class="title-item">Angular 2</div>
     </div>
@@ -17,6 +20,19 @@
       language="react"
       link-demo="http://github.com/apollostack/frontpage-react-app"
       active="active"
+    %}
+
+    {% if include.step == 1 %}
+      {% assign reactNativeImage = 'img/react-native/query.png' %}
+    {% else %}
+      {% assign reactNativeImage = 'img/react-native/mutation.gif' %}
+    {% endif %}
+
+    {% include code-sample/slide.html
+      step=include.step
+      language="react-native"
+      link-demo="http://github.com/apollostack/frontpage-react-native-app"
+      image=reactNativeImage
     %}
 
     {% include code-sample/slide-empty.html
