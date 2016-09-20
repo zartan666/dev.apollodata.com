@@ -25,7 +25,7 @@ const libraries = {
   'angular2': {
     name: 'Angular 2',
     snippets: {
-      language: 'ts',
+      language: 'typescript',
       query: require(`!!raw!./angular2/query.js`),
       mutation: require(`!!raw!./angular2/mutation.js`),
     },
