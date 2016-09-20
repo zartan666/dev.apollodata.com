@@ -23,7 +23,12 @@ const libraries = {
     }
   },
   'angular2': {
-    name: 'Angular 2'
+    name: 'Angular 2',
+    snippets: {
+      language: 'ts',
+      query: require(`!!raw!./angular2/query.js`),
+      mutation: require(`!!raw!./angular2/mutation.js`),
+    },
   },
   'swift': {
     name: 'Swift',
