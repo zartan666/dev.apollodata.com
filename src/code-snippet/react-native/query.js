@@ -12,7 +12,7 @@ const styles = {
 }
 
 // The data prop, which is provided by the wrapper below contains,
-// a `loading` key while the query is in flight and posts when it is ready
+// a `loading` key while the query is in flight and posts when ready
 function PostList({ data: { loading, posts } }) {
   if (loading) {
     return <Text style={styles.outer}>Loading</Text>;
@@ -24,8 +24,11 @@ function PostList({ data: { loading, posts } }) {
             <View>
               <Text style={styles.header}>{post.title}</Text>
               <View style={styles.subtextWrapper}>
-                <Text>by {post.author.firstName} {post.author.lastName} </Text>
-                <Text style={styles.votes}>{post.votes} votes</Text>
+              <Text>
+                by {post.author.firstName} {' '}
+                {post.author.lastName} {' '}
+              </Text>
+              <Text style={styles.votes}>{post.votes} votes</Text>
               </View>
             </View>
           </View>
