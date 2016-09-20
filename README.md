@@ -4,7 +4,7 @@ Available at [dev.apollodata.com](http://dev.apollodata.com).
 ## How to run the site
 1. Install jekyll with `gem install jekyll`
 2. Go to the project directory
-3. Run the jekyll server with `jekyll serve`
+3. Run `npm start`
 
 ## How to update CSS
 1. Compile LESS to CSS via `grunt` in command line
