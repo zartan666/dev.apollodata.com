@@ -13,48 +13,57 @@ export default class Slide extends Component {
   }
 
   render() {
-    const { operation, library, snippet, githubUrl, docsUrl } = this.props;
+    const { libraryName, snippetLanguage, clientSnippet, schemaSnippet,
+      githubUrl, docsUrl, image, demoUrl, active } = this.props;
     const { pane } = this.state;
 
+    let demo;
+    if (image) {
+      demo = <img src={image} alt="App Demo" />;
+    } else {
+      demo = <iframe src={demoUrl} />;
+    }
+
     return (
-      <div className="slide active">
-      	<div className="snippet">
-      		<div className="topcap">
-      			<div className="btn-group toggle">
+      <div className={`slide ${active && 'active'}`}>
+        <div className="snippet">
+          <div className="topcap">
+            <div className="btn-group toggle">
               {CONTEXTS.map(context => (
                 <div key={context} className={`btn ancillary small ${context === pane && 'active'}`} onClick={() => this.setPane(context)}>
-                  {context}
+                  {context === 'client' ? 'Client' : 'Schema'}
                 </div>
               ))}
-      			</div>
-
-      		</div>
-      		{CONTEXTS.map(context => (
-            <div key={context} className={`${context} ${context === pane && 'active'}`}>
-              <pre><code>
-                {snippet[context]}
-              </code></pre>
             </div>
-          ))}
-      	</div>
-      	<div className="output">
-      		<div className="topcap">
-      			<div className="heading">Output</div>
-      			<a className="cta-try link primary" href={githubUrl} target="_blank">
+          </div>
+          <div className={`client ${(pane === 'client') && 'active'}`}>
+            <pre><code className={`language-${snippetLanguage}`}>
+              {clientSnippet}
+            </code></pre>
+          </div>
+          <div className={`schema ${(pane === 'schema') && 'active'}`}>
+            <pre><code className={`language-graphql`}>
+              {schemaSnippet}
+            </code></pre>
+          </div>
+        </div>
+        <div className="output">
+          <div className="topcap">
+            <div className="heading">Output</div>
+            <a className="cta-try link primary" href={githubUrl} target="_blank">
               View on Github
               <span className="icon-arrow-right"></span>
             </a>
-      			<a className="cta-try link primary" href={docsUrl} target="_blank">
-              <span className="language">{library}</span> docs
+            <a className="cta-try link primary" href={docsUrl} target="_blank">
+              <span className="language">{libraryName}</span> docs
               <span className="icon-arrow-right"></span>
             </a>
-      		</div>
-      		<div className="output-content">
-      			<iframe src={`http://dev.apollodata.com/frontpage-${library}-app-${operation}/`}></iframe>
-      		</div>
-      	</div>
+          </div>
+          <div className="output-content">
+            {demo}
+          </div>
+        </div>
       </div>
     );
-
   }
 }

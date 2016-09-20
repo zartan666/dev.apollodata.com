@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { graphql, ApolloProvider } from 'react-apollo';
+import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
 const styles = {

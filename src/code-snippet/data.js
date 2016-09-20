@@ -1,17 +1,42 @@
 const operations = ['query', 'mutation'];
-const libraries = ['react', 'angular', 'swift'];
-const librarySnippets = {};
-operations.forEach(operation => {
-  libraries.forEach(library => {
-    try {
-      librarySnippets[operation] = librarySnippets[operation] || {};
-      librarySnippets[operation][library] = {
-        client: require(`raw!./${library}/${operation}.txt`),
-        schema: require(`raw!./schema/${operation}.txt`),
-      }
-      // just don't do anything if require fails
-    } catch (e) {}
-  });
-});
+const libraries = {
+  'react': {
+    name: 'React',
+    snippets: {
+      language: 'jsx',
+      // This bizarre syntax means we use the `raw` loader rather than the
+      // default es6 loader
+      query: require(`!!raw!./react/query.js`),
+      mutation: require(`!!raw!./react/mutation.js`),
+    },
+  },
+  'react-native': {
+    name: 'React Native',
+    snippets: {
+      language: 'jsx',
+      query: require(`!!raw!./react-native/query.js`),
+      mutation: require(`!!raw!./react-native/mutation.js`),
+    },
+    images: {
+      query: 'img/react-native/query.png',
+      mutation: 'img/react-native/mutation.gif',
+    }
+  },
+  'angular2': {
+    name: 'Angular 2'
+  },
+  'swift': {
+    name: 'Swift',
+    url: 'https://github.com/apollostack/apollo-ios'
+  },
+  'schema': {
+    snippets: {
+      query: require(`raw!./schema/query.graphql`),
+      mutation: require(`raw!./schema/mutation.graphql`),
+    },
+  },
+};
 
-export { operations, libraries, librarySnippets };
+const libraryKeys = Object.keys(libraries).filter(l => l !== 'schema')
+
+export { operations, libraries, libraryKeys };

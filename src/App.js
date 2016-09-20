@@ -15,11 +15,11 @@ export default class App extends Component {
     return (
       <div>
         <h2 className="headline-section">Query Example</h2>
-        <div class="desc-section">XXX: Pitch why Apollo is awesome for querying data.</div>
+        <div className="desc-section">XXX: Pitch why Apollo is awesome for querying data.</div>
         <CodeSnippet operation="query" activeLibrary={library} onLibraryChange={this.onLibraryChange} />
 
         <h2 className="headline-section">Mutation Example</h2>
-        <div class="desc-section">XXX: Pitch why Apollo is awesome for mutating data.</div>
+        <div className="desc-section">XXX: Pitch why Apollo is awesome for mutating data.</div>
         <CodeSnippet operation="mutation" activeLibrary={library} onLibraryChange={this.onLibraryChange} />
       </div>
     );
