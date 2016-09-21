@@ -23,7 +23,7 @@ const libraries = {
     }
   },
   'angular2': {
-    name: 'Angular 2',
+    name: 'Angular',
     snippets: {
       language: 'typescript',
       query: require(`!!raw!./angular2/query.js`),
