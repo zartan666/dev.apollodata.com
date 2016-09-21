@@ -34,6 +34,10 @@ const libraries = {
     name: 'Swift',
     url: 'https://github.com/apollostack/apollo-ios'
   },
+  'android': {
+    name: 'Android',
+    url: 'http://dev.apollodata.com/android'
+  },
   'schema': {
     snippets: {
       query: require(`raw!./schema/query.graphql`),
