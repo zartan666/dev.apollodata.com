@@ -22,12 +22,12 @@ markdown: kramdown
 
 # Sites
 url_projects_react: http://dev.apollodata.com/react
-url_projects_reactnative: http://dev.apollodata.com/react
-url_projects_angular: http://dev.apollodata.com/angular
-url_projects_ios: http://dev.apollodata.com/ios
+url_projects_reactnative: http://dev.apollodata.com/react-native
+url_projects_angular: http://dev.apollodata.com/angular2
+url_projects_swift: http://dev.apollodata.com/ios
 url_projects_android: http://dev.apollodata.com/android
-url_projects_server: http://dev.apollodata.com/server
-url_projects_vanillajs: http://dev.apollodata.com/vanillajs
+url_projects_server: http://dev.apollodata.com/tools
+url_projects_vanillajs: http://dev.apollodata.com/core
 url_community: http://dev.apollodata.com/community
 url_blog: https://medium.com/apollo-stack
 url_slack: http://slack.apollostack.com
