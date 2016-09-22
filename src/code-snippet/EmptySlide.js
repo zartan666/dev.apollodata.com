@@ -7,7 +7,7 @@ export default ({ libraryName, githubUrl, active }) => (
 				Help launch Apollo on <span className="language">{libraryName}</span><
 			/div>
 			<div className="message-contribute">
-				Apollo for <span className="language">{libraryName}</span> is not available yet.
+				An example for <span className="language">{libraryName}</span> Apollo is not available yet.
 				Help accelerate our efforts by contributing to the open source project.
 			</div>
 			<a className="btn primary round small" href={githubUrl} target="_blank">Learn more</a>
