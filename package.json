@@ -40,6 +40,7 @@
     "filesize": "3.3.0",
     "fs-extra": "0.30.0",
     "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
     "grunt-contrib-less": "^1.3.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-s3": "^0.1.0",
@@ -65,9 +66,13 @@
     "whatwg-fetch": "1.0.0"
   },
   "scripts": {
-    "start": "concurrently 'node scripts/start.js' 'jekyll server'",
-    "build": "node scripts/build.js",
-    "test": "jest --watch --env=jsdom"
+    "start": "grunt less && concurrently 'node scripts/start.js' 'jekyll server' 'grunt watch'",
+    "build-react": "node scripts/build.js",
+    "build-less": "grunt less",
+    "build": "npm run build-react && npm run build-less",
+    "test": "jest --watch --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "bash scripts/deploy.sh"
   },
   "repository": {
     "type": "git",

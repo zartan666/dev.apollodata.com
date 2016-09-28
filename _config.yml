@@ -42,3 +42,10 @@ exclude:
   - _posts
   - gruntfile.js
   - npm-debug.log
+  - src
+  - css
+  - config
+  - scripts
+  - package.json
+  - README
+  - style.less
