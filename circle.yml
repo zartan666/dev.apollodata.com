@@ -1,0 +1,7 @@
+
+
+deployment:
+  prod:
+    branch: master
+    commands:
+      - npm run deploy

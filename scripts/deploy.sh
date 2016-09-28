@@ -6,7 +6,7 @@ if [ -z $AWS_BUCKET ] || [ -z $AWS_ACCESS_KEY_ID ] || [ -z $AWS_SECRET_ACCESS_KE
 fi
 
 # Build site
-JEKYLL_ENV=production jekyll build
+JEKYLL_ENV=production bundle exec jekyll build
 
 # Deploy
 cd _site
