@@ -1,4 +1,7 @@
-
+test:
+  override:
+    # maybe we will need tests in the future
+    - echo 'ok!'
 
 deployment:
   prod:
