@@ -5,6 +5,8 @@ if [ -z $AWS_BUCKET ] || [ -z $AWS_ACCESS_KEY_ID ] || [ -z $AWS_SECRET_ACCESS_KE
   exit 1;
 fi
 
+trap "echo Deployment failed." EXIT
+
 # Build site
 JEKYLL_ENV=production bundle exec jekyll build
 
