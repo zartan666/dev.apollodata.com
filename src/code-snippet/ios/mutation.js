@@ -1,20 +1,13 @@
 import UIKit
 import Apollo
 
+let apollo = ApolloClient(url: URL(string: "http://localhost:8080/graphql")!)
+
 class PostListViewController: UITableViewController {
   var posts: [AllPostsQuery.Data.Post]? {
     didSet {
       tableView.reloadData()
     }
-  }
-
-  // MARK: - View lifecycle
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-    tableView.rowHeight = UITableViewAutomaticDimension
-    tableView.estimatedRowHeight = 64
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -23,15 +16,8 @@ class PostListViewController: UITableViewController {
     loadData()
   }
 
-  // MARK: - Data loading
-
   func loadData() {
     apollo.fetch(query: AllPostsQuery()) { (result, error) in
-      if let error = error {
-        NSLog("Error while fetching query: \(error.localizedDescription)")
-        return
-      }
-
       self.posts = result?.data?.posts
     }
   }
@@ -43,19 +29,12 @@ class PostListViewController: UITableViewController {
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? PostTableViewCell else {
-      fatalError("Could not dequeue PostTableViewCell")
-    }
-
-    guard let post = posts?[indexPath.row] else {
-      fatalError("Could not find post at row \(indexPath.row)")
-    }
-
-    cell.configure(with: post.fragments.postDetails)
-
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
+    cell.configure(with: posts![indexPath.row].fragments.postDetails)
     return cell
   }
 }
+
 
 class PostTableViewCell: UITableViewCell {
   var postId: Int?
@@ -76,17 +55,7 @@ class PostTableViewCell: UITableViewCell {
     guard let postId = postId else { return }
 
     apollo.perform(mutation: UpvotePostMutation(postId: postId)) { (result, error) in
-      if let error = error {
-        NSLog("Error while attempting to upvote post: \(error.localizedDescription)")
-        return
-      }
-
-      guard let upvotePost = result?.data?.upvotePost else {
-        NSLog("Missing result after upvoting post")
-        return
-      }
-
-      self.configure(with: upvotePost.fragments.postDetails)
+      self.configure(with: result!.data!.upvotePost!.fragments.postDetails)
     }
   }
 }
