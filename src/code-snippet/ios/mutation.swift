@@ -1,8 +1,6 @@
 import UIKit
 import Apollo
 
-let apollo = ApolloClient(url: URL(string: "http://localhost:8080/graphql")!)
-
 class PostListViewController: UITableViewController {
   var posts: [AllPostsQuery.Data.Post]? {
     didSet {
@@ -10,11 +8,15 @@ class PostListViewController: UITableViewController {
     }
   }
 
+  // MARK: - View lifecycle
+
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
     loadData()
   }
+
+  // MARK: - Data loading
 
   func loadData() {
     apollo.fetch(query: AllPostsQuery()) { (result, error) in
@@ -30,11 +32,14 @@ class PostListViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
-    cell.configure(with: posts![indexPath.row].fragments.postDetails)
+
+    let post = posts?[indexPath.row]
+
+    cell.configure(with: post?.fragments.postDetails)
+
     return cell
   }
 }
-
 
 class PostTableViewCell: UITableViewCell {
   var postId: Int?
@@ -43,27 +48,27 @@ class PostTableViewCell: UITableViewCell {
   @IBOutlet weak var bylineLabel: UILabel!
   @IBOutlet weak var votesLabel: UILabel!
 
-  func configure(with post: PostDetails) {
-    postId = post.id
+  func configure(with post: PostDetails?) {
+    postId = post?.id
 
-    titleLabel?.text = post.title
+    titleLabel?.text = post?.title
     bylineLabel?.text = byline(for: post)
-    votesLabel?.text = "\(post.votes ?? 0) votes"
+    votesLabel?.text = "\(post?.votes ?? 0) votes"
   }
 
   @IBAction func upvote() {
     guard let postId = postId else { return }
 
     apollo.perform(mutation: UpvotePostMutation(postId: postId)) { (result, error) in
-      self.configure(with: result!.data!.upvotePost!.fragments.postDetails)
+      self.configure(with: result?.data?.upvotePost?.fragments.postDetails)
     }
   }
 }
 
 // We can define helper methods that take the generated data types as arguments
 
-func byline(for post: PostDetails) -> String? {
-  if let author = post.author {
+func byline(for post: PostDetails?) -> String? {
+  if let author = post?.author {
     return "by \(author.fullName)"
   } else {
     return nil
