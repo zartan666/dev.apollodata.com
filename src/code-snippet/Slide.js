@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
 const CONTEXTS = ['client', 'schema'];
+const CONTEXTS_WITH_GRAPHQL = ['client', 'graphql', 'schema'];
+const CONTEXT_NAMES = {
+  client: 'Client',
+  graphql: 'Query',
+  schema: 'Schema'
+}
 
 export default class Slide extends Component {
   constructor() {
@@ -13,8 +19,8 @@ export default class Slide extends Component {
   }
 
   render() {
-    const { libraryName, snippetLanguage, clientSnippet, schemaSnippet,
-      githubUrl, docsUrl, image, demoUrl, active } = this.props;
+    const { libraryName, snippetLanguage, clientSnippet, graphqlSnippet,
+      schemaSnippet, githubUrl, docsUrl, image, demoUrl, active } = this.props;
     const { pane } = this.state;
 
     let demo;
@@ -24,14 +30,16 @@ export default class Slide extends Component {
       demo = <iframe src={demoUrl} />;
     }
 
+    const contexts = graphqlSnippet ? CONTEXTS_WITH_GRAPHQL : CONTEXTS;
+
     return (
       <div className={`slide ${active && 'active'}`}>
         <div className="snippet">
           <div className="topcap">
             <div className="btn-group toggle">
-              {CONTEXTS.map(context => (
+              {contexts.map(context => (
                 <div key={context} className={`btn ancillary small ${context === pane && 'active'}`} onClick={() => this.setPane(context)}>
-                  {context === 'client' ? 'Client' : 'Schema'}
+                  {CONTEXT_NAMES[context]}
                 </div>
               ))}
             </div>
@@ -41,6 +49,13 @@ export default class Slide extends Component {
               {clientSnippet}
             </code></pre>
           </div>
+          {graphqlSnippet &&
+            <div className={`client ${(pane === 'graphql') && 'active'}`}>
+              <pre><code className={`language-graphql`}>
+                {graphqlSnippet}
+              </code></pre>
+            </div>
+          }
           <div className={`schema ${(pane === 'schema') && 'active'}`}>
             <pre><code className={`language-graphql`}>
               {schemaSnippet}

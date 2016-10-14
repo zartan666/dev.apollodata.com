@@ -35,6 +35,7 @@ class PostListViewController: UITableViewController {
   }
 }
 
+
 class PostTableViewCell: UITableViewCell {
   var postId: Int?
 
@@ -48,6 +49,14 @@ class PostTableViewCell: UITableViewCell {
     titleLabel?.text = post.title
     bylineLabel?.text = byline(for: post)
     votesLabel?.text = "\(post.votes ?? 0) votes"
+  }
+
+  @IBAction func upvote() {
+    guard let postId = postId else { return }
+
+    apollo.perform(mutation: UpvotePostMutation(postId: postId)) { (result, error) in
+      self.configure(with: result!.data!.upvotePost!.fragments.postDetails)
+    }
   }
 }
 
@@ -66,23 +75,5 @@ func byline(for post: PostDetails) -> String? {
 extension PostDetails.Author {
   var fullName: String {
     return [firstName, lastName].flatMap { $0 }.joined(separator: " ")
-  }
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////
-
-query AllPosts {
-  posts {
-    ...PostDetails
-  }
-}
-
-fragment PostDetails on Post {
-  id
-  title
-  votes
-  author {
-    firstName
-    lastName
   }
 }

@@ -17,6 +17,7 @@ export default ({ operation, activeLibrary, onLibraryChange }) => {
     if (libraries[library].snippets) {
       const snippetLanguage = libraries[library].snippets.language;
       const clientSnippet = libraries[library].snippets[operation];
+      const graphqlSnippet = libraries[library].snippets[operation + 'GraphQL'];
       const schemaSnippet = libraries.schema.snippets[operation];
 
       const image = libraries[library].images && libraries[library].images[operation];
@@ -33,6 +34,7 @@ export default ({ operation, activeLibrary, onLibraryChange }) => {
           libraryName={libraryName}
           snippetLanguage={snippetLanguage}
           clientSnippet={clientSnippet}
+          graphqlSnippet={graphqlSnippet}
           schemaSnippet={schemaSnippet}
           image={image}
           demoUrl={demoUrl}

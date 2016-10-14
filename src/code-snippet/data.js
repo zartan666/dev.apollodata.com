@@ -34,8 +34,10 @@ const libraries = {
     name: 'iOS',
     snippets: {
       language: 'swift',
-      query: require(`!!raw!./ios/query.js`),
-      mutation: require(`!!raw!./ios/mutation.js`),
+      query: require(`!!raw!./ios/query.swift`),
+      queryGraphQL: require(`!!raw!./ios/query.graphql`),
+      mutation: require(`!!raw!./ios/mutation.swift`),
+      mutationGraphQL: require(`!!raw!./ios/mutation.graphql`),
     },
     images: {
       query: 'img/ios/query.png',
