@@ -33,7 +33,7 @@ export default class Slide extends Component {
     const contexts = graphqlSnippet ? CONTEXTS_WITH_GRAPHQL : CONTEXTS;
 
     return (
-      <div className={`slide ${active && 'active'}`}>
+      <div className={`slide ${active && 'active'} ${libraryName.toLowerCase().replace(/ /g,"_")}`}>
         <div className="snippet">
           <div className="topcap">
             <div className="btn-group toggle">
