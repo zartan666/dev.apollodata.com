@@ -30,8 +30,8 @@ const libraries = {
       mutation: require(`!!raw!./angular2/mutation.js`),
     },
   },
-  'swift': {
-    name: 'Swift',
+  'ios': {
+    name: 'iOS',
     snippets: {
       language: 'swift',
       query: require(`!!raw!./ios/query.js`),
