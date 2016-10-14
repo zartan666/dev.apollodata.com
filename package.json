@@ -66,7 +66,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "scripts": {
-    "start": "grunt less && concurrently 'node scripts/start.js' 'jekyll server' 'grunt watch'",
+    "start": "grunt less && concurrently 'node scripts/start.js' 'bundle exec jekyll server' 'grunt watch'",
     "build-react": "node scripts/build.js",
     "build-less": "grunt less",
     "build": "npm run build-react && npm run build-less",
