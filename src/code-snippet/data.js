@@ -32,7 +32,15 @@ const libraries = {
   },
   'swift': {
     name: 'Swift',
-    url: 'https://github.com/apollostack/apollo-ios'
+    snippets: {
+      language: 'swift',
+      query: require(`!!raw!./ios/query.js`),
+      mutation: require(`!!raw!./ios/mutation.js`),
+    },
+    images: {
+      query: 'img/ios/query.png',
+      mutation: 'img/ios/mutation.gif',
+    }
   },
   'schema': {
     snippets: {
