@@ -29,8 +29,9 @@ url_projects_android: http://dev.apollodata.com/android
 url_projects_server: http://dev.apollodata.com/tools
 url_projects_vanillajs: http://dev.apollodata.com/core
 url_community: http://dev.apollodata.com/community
-url_blog: https://medium.com/apollo-stack
-url_slack: http://slack.apollostack.com
+url_blog: https://dev-blog.apollodata.com/
+url_slack: http://www.apollodata.com/#slack
+url_youtube: https://www.youtube.com/c/ApolloGraphQL
 
 
 # Social
