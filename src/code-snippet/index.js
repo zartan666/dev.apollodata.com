@@ -25,7 +25,7 @@ export default ({ operation, activeLibrary, onLibraryChange }) => {
       const demoUrl = `http://dev.apollodata.com/frontpage-${library}-app-${operation}/`;
 
       // these two are completely standard
-      const githubUrl = `https://github.com/apollostack/frontpage-${activeLibrary}-app`;
+      const githubUrl = `https://github.com/apollographql/frontpage-${activeLibrary}-app`;
       const docsUrl = `http://dev.apollodata.com/${activeLibrary}`;
 
       return (
