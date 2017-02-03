@@ -1,7 +1,7 @@
 {
   "name": "apollo",
   "version": "1.0.0",
-  "description": "Available at [apollostack.com](http://apollostack.com).",
+  "description": "Available at [apollodata.com](http://apollodata.com).",
   "main": "gruntfile.js",
   "dependencies": {
     "grunt": "^1.0.1",
@@ -76,7 +76,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/apollostack/apollo/"
+    "url": "https://github.com/apollographql/"
   },
   "keywords": [],
   "author": "",
