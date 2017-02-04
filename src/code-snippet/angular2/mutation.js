@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Angular2Apollo } from 'angular2-apollo';
+import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 
 @Component({
@@ -13,7 +13,7 @@ import gql from 'graphql-tag';
 class PostUpvoterComponent {
   @Input() postId: number;
 
-  constructor(private apollo: Angular2Apollo) {}
+  constructor(private apollo: Apollo) {}
 
   upvote(postId: number) {
     this.apollo.mutate({
