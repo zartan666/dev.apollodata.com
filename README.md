@@ -1,4 +1,6 @@
 # Apollo site
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/apollographql/dev.apollodata.com.svg)](https://greenkeeper.io/)
 Available at [dev.apollodata.com](http://dev.apollodata.com).
 
 ## How to run the site
