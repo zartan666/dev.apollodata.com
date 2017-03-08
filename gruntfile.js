@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         },
         files: {
           // target.css file: source.less file
-          "style.css": "style.less"
+          "_site/style.css": "style.less"
         }
       }
     },
