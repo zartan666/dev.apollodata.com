@@ -51,6 +51,7 @@
     "http-proxy-middleware": "0.17.1",
     "jest": "15.1.1",
     "json-loader": "0.5.4",
+    "maw": "^0.4.0",
     "object-assign": "4.1.0",
     "opn": "4.0.2",
     "path-exists": "3.0.0",
@@ -73,7 +74,8 @@
     "build": "npm run build-react && npm run build-less",
     "test": "jest --watch --env=jsdom",
     "predeploy": "npm run build",
-    "deploy": "bash scripts/deploy.sh"
+    "deploy": "bash scripts/deploy.sh",
+    "maw": "maw dev"
   },
   "repository": {
     "type": "git",
