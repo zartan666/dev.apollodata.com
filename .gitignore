@@ -1,11 +1,4 @@
-_site
+build
 node_modules
 npm-debug.log*
-.sass-cache
-.jekyll-metadata
-
-img/.DS_Store
-
-.DS_Store
-build
-style.css
+**/.DS_Store
