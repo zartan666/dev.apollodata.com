@@ -9,3 +9,7 @@ deployment:
     branch: master
     commands:
       - bash scripts/deploy.sh
+
+machine:
+  node:
+    version: 6.1.0

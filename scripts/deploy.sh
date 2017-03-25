@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 if [ -z $AWS_BUCKET ] || [ -z $AWS_ACCESS_KEY_ID ] || [ -z $AWS_SECRET_ACCESS_KEY ]; then
   echo "You must set the AWS_BUCKET, AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY env vars";
   exit 1;
