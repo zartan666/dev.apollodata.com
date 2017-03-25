@@ -7,11 +7,10 @@ fi
 
 trap "echo Deployment failed." EXIT
 
-# Build site
-JEKYLL_ENV=production bundle exec jekyll build
+npm run build
 
 # Deploy
-cd _site
+cd build
 aws s3 sync . s3://$AWS_BUCKET --acl public-read
 
 echo "Deployment to $AWS_BUCKET succeeded"
