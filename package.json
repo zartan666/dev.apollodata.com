@@ -10,6 +10,6 @@
     "build": "maw build"
   },
   "devDependencies": {
-    "maw": "^0.4.9"
+    "maw": "^0.4.10"
   }
 }
