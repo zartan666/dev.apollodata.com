@@ -2,9 +2,7 @@ module.exports = {
   site: {
     url: 'http://dev.apollodata.com/',
     title: 'Apollo Open Source',
-    description: `
-      Open source clients, server libraries, and tools for GraphQL.
-    `,
+    description: 'Open source clients, server libraries, and tools for GraphQL.',
     url_projects_react: 'http://dev.apollodata.com/react',
     url_projects_reactnative: 'http://dev.apollodata.com/react-native',
     url_projects_angular: 'http://dev.apollodata.com/angular2',
