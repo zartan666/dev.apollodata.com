@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CodeSnippet from './code-snippet';
+import CodeSnippet from './CodeSnippet';
 
 export default class App extends Component {
   constructor() {

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body>
+    <div class="layout">
+      <div class="page">
+        {{> nav}}
+        {{> sidebar}}
+        <div class="content">
+          <section class="section features">
+            <h2 class="headline-section">Apollo</h2>
+            <div class="desc-section">The ultra-flexible, production ready GraphQL client for React and native apps.</div>
+            <div class="list-features">
+              <div class="item-feature">
+                <span class="icon-lightning"></span>
+                <div class="meta">
+                  <div class="title-feature">Fully featured</div>
+                  <div class="desc-feature">
+                    Queries, caching, mutations, optimistic UI, subscriptions, pagination,
+                    server-side rendering, prefetching,
+                    <a href="http://dev.apollodata.com/react/">and more</a>.
+                  </div>
+                </div>
+              </div>
+              <div class="item-feature">
+                <span class="icon-heart-hollow"></span>
+                <div class="meta">
+                  <div class="title-feature">Built for modern React apps</div>
+                  <div class="desc-feature">
+                    Compatible out of the box with Redux, React Router, Recompose, Expo, Next.js, and everything else in the React ecosystem.
+                  </div>
+                </div>
+              </div>
+              <div class="item-feature">
+                <span class="icon-shield"></span>
+                <div class="meta">
+                  <div class="title-feature">Production ready</div>
+                  <div class="desc-feature">
+                    Used in critical production apps today by Credit Karma, NewSpring Church, Coursera, and others.
+                  </div>
+                </div>
+              </div>
+              <div class="item-feature">
+                <span class="icon-users"></span>
+                <div class="meta">
+                  <div class="title-feature">Community focused</div>
+                  <div class="desc-feature">
+                    Over 100 contributors and counting. Built by the community, for
+                    <a href="http://dev.apollodata.com/community/">the community</a>.
+                  </div>
+                </div>
+              </div>
+              <div class="item-feature">
+                <span class="icon-wrench"></span>
+                <div class="meta">
+                  <div class="title-feature">Tooling and server friendly</div>
+                  <div class="desc-feature">
+                    <a href="https://dev-blog.apollodata.com/apollo-client-developer-tools-ff89181ebcf">Apollo Chrome devtools</a>, static query analysis, code generation, and autocompletion.
+                  </div>
+                </div>
+              </div>
+              <div class="item-feature">
+                <span class="icon-cog"></span>
+                <div class="meta">
+                  <div class="title-feature">Incrementally adoptable</div>
+                  <div class="desc-feature">
+                    The only GraphQL client that works with any client-side architecture and every GraphQL server. It adapts to fit your needs.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section get-started">
+            <div class="title-guides">Get Started Guides</div>
+            <div class="picker-guides">
+              <a class="item-guide" href="{{ site.url_projects_react }}">
+                <img src="img/logo-reactjs.svg" class="image"/>
+                <span class="title-item">React<span class="icon-arrow-right"></span></span>
+              </a>
+              <a class="item-guide" href="{{ site.url_projects_reactnative }}">
+                <img src="img/logo-reactjs.svg" class="image"/>
+                <span class="title-item">React Native<span class="icon-arrow-right"></span></span>
+              </a>
+              <a class="item-guide"  href="{{ site.url_projects_angular }}">
+                <img src="img/logo-angular.svg" class="image"/>
+                <span class="title-item">Angular<span class="icon-arrow-right"></span></span>
+              </a>
+              <a class="item-guide"  href="{{ site.url_projects_swift }}">
+                <img src="img/logo-swift.svg" class="image"/>
+                <span class="title-item">iOS<span class="icon-arrow-right"></span></span>
+              </a>
+              <a class="item-guide"  href="{{ site.url_projects_android }}">
+                <img src="img/logo-android.svg" class="image"/>
+                <span class="title-item">Android<span class="icon-arrow-right"></span></span>
+              </a>
+            </div>
+          </section>
+
+          <section class="section">
+            <div id="code-snippets" />
+          </section>
+
+          {{> footer}}
+        </div>
+      </div>
+
+      {{> overlays}}
+    </div>
+
+    <script type="text/javascript">
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+      analytics.load("wgrIo8Bul0Ujl8USETG3DB6hONdy4kTg");
+      analytics.page()
+      }}();
+    </script>
+    <script src="index.js"></script>
+    <script src="prism.minimized.js"></script>
+  </body>
+</html>

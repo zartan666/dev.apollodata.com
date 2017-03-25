@@ -1,3 +1,4 @@
+
 test:
   override:
     # maybe we will need tests in the future
@@ -7,4 +8,4 @@ deployment:
   prod:
     branch: master
     commands:
-      - npm run deploy
+      - bash scripts/deploy.sh
