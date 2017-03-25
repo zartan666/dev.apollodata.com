@@ -1,3 +1,16 @@
+.hero {
+	background-color: @color-primary;
+	.clearfix;
+
+	.hero-content {
+		.page-margins;
+		.std-xpadding;
+
+		padding-bottom: 5rem;
+		padding-top: 5rem;
+	}
+}
+
 .list-features {
 	.page-margins;
 	overflow: hidden;
@@ -52,7 +65,7 @@
 
 .picker-guides {
 	.inline-block-whitespace;
-	text-align: center;
+	text-align: left;
 
 	.item-guide {
 		.transition(all 200ms ease-out);
@@ -66,6 +79,10 @@
 		text-align: center;
 		vertical-align: top;
 		width: 90px;
+
+		&.double-wide {
+			width: 180px;
+		}
 
 		&:hover {
 			box-shadow: fade(@color-primary, 50%) 0 0 7px 0, fade(@color-primary, 100%) 0 0 0 1px inset ;
