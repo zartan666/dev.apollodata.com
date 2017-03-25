@@ -3,11 +3,31 @@
 	.clearfix;
 
 	.hero-content {
+		.clearfix;
 		.page-margins;
 		.std-xpadding;
 
-		padding-bottom: 5rem;
 		padding-top: 5rem;
+	}
+
+	.headline-section {
+		font-size: 4rem;
+		.type-light;
+		color: @color-lightest;
+		margin-bottom: 1.5rem;
+	}
+
+	.desc-section {
+		.font-m3;
+		.type-light;
+		color: @color-lightest;
+		margin-bottom: 2rem;
+	}
+
+	.hero-left {
+		display: inline-block;
+		float: left;
+		width: 50%;
 	}
 }
 
@@ -59,29 +79,42 @@
 .title-guides {
 	.subheading-caps(center);
 	.font-s2;
-	.std-xpadding;
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
+	margin: 10px;
 }
 
 .picker-guides {
 	.inline-block-whitespace;
 	text-align: left;
 
+	background-color: @color-accent-cooler;
+	margin-top: 6rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.1rem;
+	border-radius: 0.5rem 0.5rem 0 0;
+	.background-image( linear-gradient(from top, @color-accent-coolest 0%, @color-accent-cooler 100%) );
+
+	.guide-buttons {
+		display: flex;
+		padding: 5px;
+	}
+
 	.item-guide {
 		.transition(all 200ms ease-out);
 		background: @color-lighter;
 		cursor: pointer;
-		display: inline-block;
 		height: 5rem;
-		margin-right: 10px;
-		margin-left: 10px;
+		margin-right: 5px;
+		margin-left: 5px;
 		margin-bottom: 10px;
 		text-align: center;
 		vertical-align: top;
 		width: 90px;
 
+		flex: 1;
+
 		&.double-wide {
-			width: 180px;
+			flex: 2;
 		}
 
 		&:hover {
