@@ -3,31 +3,44 @@
 	.clearfix;
 
 	.hero-content {
-		.clearfix;
 		.page-margins;
 		.std-xpadding;
+		position: relative;
 
 		padding-top: 5rem;
+
+		display: flex;
 	}
 
 	.headline-section {
 		font-size: 4rem;
 		.type-light;
-		color: @color-lightest;
 		margin-bottom: 1.5rem;
 	}
 
 	.desc-section {
 		.font-m3;
 		.type-light;
-		color: @color-lightest;
-		margin-bottom: 2rem;
+		line-height: 1.2;
 	}
 
 	.hero-left {
 		display: inline-block;
-		float: left;
 		width: 50%;
+		color: @color-lightest;
+		flex: 1;
+	}
+
+	.hero-right {
+		flex: 1;
+		position: relative;
+		margin-left: 50px;
+		text-align: center;
+	}
+
+	.hero-diagram {
+		width: 100%;
+		max-width: 400px;
 	}
 }
 
@@ -87,8 +100,10 @@
 	.inline-block-whitespace;
 	text-align: left;
 
+	color: @color-darker;
+
 	background-color: @color-accent-cooler;
-	margin-top: 6rem;
+	margin-top: 5rem;
 	padding-top: 0.5rem;
 	padding-bottom: 0.1rem;
 	border-radius: 0.5rem 0.5rem 0 0;
