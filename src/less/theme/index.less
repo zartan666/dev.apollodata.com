@@ -29,7 +29,7 @@
 
 	.hero-left {
 		display: inline-block;
-		width: 50%;
+		@media screen and (min-width: @breakpoint) { width: 50% }
 		color: @color-lightest;
 		flex: 1;
 	}
@@ -39,6 +39,10 @@
 		position: relative;
 		margin-left: 50px;
 		text-align: center;
+		width: 50%;
+
+		display: none;
+		@media screen and (min-width: @breakpoint) { display: block }
 	}
 
 	.hero-diagram {
