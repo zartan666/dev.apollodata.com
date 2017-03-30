@@ -8,7 +8,9 @@
 	.clearfix;
 
 	.hero-content {
-		.std-xpadding;
+		padding-left: 3rem;
+		padding-right: 3rem;
+
 		position: relative;
 
 		padding-top: 2rem;
@@ -18,6 +20,10 @@
 		align-items: center;
 		max-width: 1400px;
 		margin: 0 auto;
+
+		@media screen and (max-width: @hero-breakpoint) {
+			.std-xpadding;
+		}
 
 		@media screen and (max-width: @hero-breakpoint) and (min-width: @breakpoint) {
 			flex-direction: column;
@@ -75,7 +81,7 @@
 	.hero-right {
 		flex: 1 0 680px;
 		position: relative;
-		margin-left: 80px;
+		margin-left: 50px;
 		text-align: right;
 
 		display: none;
