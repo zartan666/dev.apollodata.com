@@ -1,3 +1,5 @@
+@hero-breakpoint: 1200px;
+
 .hero {
 	background-color: @color-primary;
 
@@ -12,50 +14,83 @@
 		padding-top: 2rem;
 
 		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 1400px;
+		margin: 0 auto;
+
+		@media screen and (max-width: @hero-breakpoint) and (min-width: @breakpoint) {
+			flex-direction: column;
+		}
 	}
 
 	.headline-section {
-		font-size: 4rem;
+		font-size: 3rem;
 		.type-light;
 		margin-bottom: 1.5rem;
+		@media screen and (min-width: @breakpoint) { font-size: 4rem }
 	}
 
 	.desc-section {
-		.font-m2;
+		.font-m1;
 		//.type-light;
 		line-height: 1.2;
 		margin-bottom: 2rem;
+		@media screen and (min-width: @breakpoint) { .font-m2; line-height: 1.2 }
 	}
+
+	// Breakpoints
+	// Everything is fine at > 1200 px width
 
 	.hero-left {
 		display: inline-block;
-		@media screen and (min-width: @breakpoint) { width: 50% }
 		color: @color-lightest;
-		flex: 0 0 500px;
-		padding: 50px 0px 20px 50px;
+		margin-bottom: 30px;
+
+		@media screen and (min-width: @breakpoint) {
+			flex: 1 0 400px;
+		}
+
+		@media screen and (max-width: @hero-breakpoint) and (min-width: @breakpoint) {
+			flex: 0 0 200px;
+			display: flex;
+			margin-bottom: 30px;
+			align-items: center;
+			flex-direction: row;
+
+			.hero-text {
+				flex: 1 1 0;
+			}
+
+			.picker-guides {
+				flex: 1 1 0;
+				margin-left: 50px;
+				.picker-text {
+					display: none;
+				}
+			}
+		}
 	}
 
 	.hero-right {
-		flex: 1.7;
+		flex: 1 0 680px;
 		position: relative;
 		margin-left: 80px;
 		text-align: right;
-		padding-right: 50px;
 
 		display: none;
 		@media screen and (min-width: @breakpoint) { display: block }
-		margin-bottom: -20px;
+		@media screen and (max-width: @hero-breakpoint) {
+			width: 100%;
+			margin: 0;
+			flex-basis: 0;
+		}
 
 		.expo {
 			box-shadow: 0 2px 5px rgba(0,0,0,.1);
 			border: 1px solid #bbb;
+			margin-bottom: -20px;
 		}
-	}
-
-	.hero-diagram {
-		width: 100%;
-		max-width: 400px;
-		margin-top: 20px;
 	}
 }
 
