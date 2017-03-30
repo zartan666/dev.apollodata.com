@@ -1,3 +1,120 @@
+@hero-breakpoint: 1200px;
+
+.hero {
+	background-color: @color-primary;
+
+	.background-image( linear-gradient(from bottom, lighten(@color-primary, 3%) 0%, @color-primary 100%) );
+
+	.clearfix;
+
+	.hero-content {
+		padding-left: 3rem;
+		padding-right: 3rem;
+
+		position: relative;
+
+		padding-top: 2rem;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 1400px;
+		margin: 0 auto;
+
+		@media screen and (max-width: @hero-breakpoint) {
+			.std-xpadding;
+		}
+
+		@media screen and (max-width: @hero-breakpoint) and (min-width: @breakpoint) {
+			flex-direction: column;
+		}
+	}
+
+	.headline-section {
+		font-size: 3rem;
+		.type-light;
+		margin-bottom: 1.5rem;
+		@media screen and (min-width: @breakpoint) { font-size: 4rem }
+	}
+
+	.desc-section {
+		.font-m1;
+		//.type-light;
+		line-height: 1.2;
+		margin-bottom: 2rem;
+		@media screen and (min-width: @breakpoint) {
+			.font-m2;
+			line-height: 1.2;
+			.type-light;
+		}
+	}
+
+	// Breakpoints
+	// Everything is fine at > 1200 px width
+
+	.hero-left {
+		display: inline-block;
+		color: @color-lightest;
+		margin-bottom: 30px;
+
+		@media screen and (min-width: @breakpoint) {
+			flex: 1 0 400px;
+		}
+
+		@media screen and (max-width: @hero-breakpoint) and (min-width: @breakpoint) {
+			flex: 0 0 200px;
+			display: flex;
+			margin-bottom: 30px;
+			align-items: center;
+			flex-direction: row;
+
+			.hero-text {
+				flex: 1 1 0;
+			}
+
+			.picker-guides {
+				flex: 1 1 0;
+				margin-left: 50px;
+				.picker-text {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.hero-right {
+		flex: 1 0 680px;
+		position: relative;
+		margin-left: 50px;
+		text-align: right;
+
+		display: none;
+		@media screen and (min-width: @breakpoint) { display: block }
+		@media screen and (max-width: @hero-breakpoint) {
+			width: 100%;
+			margin: 0;
+			flex-basis: 0;
+		}
+
+		.expo {
+			box-shadow: 0 2px 5px rgba(0,0,0,.1);
+			border: 1px solid #bbb;
+			margin-bottom: -20px;
+			background-color: @color-accent-cooler;
+
+			.expo-loading {
+				display: none;
+				&:last-child {
+					text-align: center;
+					margin-top: 150px;
+					color: @color-dark;
+					display: block;
+				}
+			}
+		}
+	}
+}
+
 .list-features {
 	.page-margins;
 	overflow: hidden;
@@ -46,29 +163,54 @@
 .title-guides {
 	.subheading-caps(center);
 	.font-s2;
-	.std-xpadding;
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
+	margin: 10px;
 }
 
 .picker-guides {
 	.inline-block-whitespace;
-	text-align: center;
+	text-align: left;
+
+	.rest-guides {
+		display: flex;
+	}
 
 	.item-guide {
 		.transition(all 200ms ease-out);
-		background: @color-lighter;
+		//background: @color-lighter;
+		border: 1px solid white;
 		cursor: pointer;
-		display: inline-block;
 		height: 5rem;
-		margin-right: 10px;
-		margin-left: 10px;
+		margin-right: 5px;
+		margin-left: 5px;
 		margin-bottom: 10px;
 		text-align: center;
 		vertical-align: top;
-		width: 90px;
+		background-color: rgba(255, 255, 255, 0.05);
+
+		flex: 1;
+
+		&.double-wide {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.image {
+				margin: 10px;
+			}
+			.title-item {
+				font-size: 20px;
+				vertical-align: middle;
+			}
+			.icon-arrow-right {
+				margin-left: 10px;
+
+				// HAHA using important here sorry
+				font-size: 15px !important;
+			}
+		}
 
 		&:hover {
-			box-shadow: fade(@color-primary, 50%) 0 0 7px 0, fade(@color-primary, 100%) 0 0 0 1px inset ;
+			background-color: rgba(255, 255, 255, 0.2);
 		}
 
 		.image {
@@ -84,7 +226,7 @@
 			.transition(all 150ms ease-out);
 			.font-s1;
 			.type-semibold;
-			color: @color-darkest;
+			color: @color-lighter;
 			display: block;
 			line-height: 1;
 			text-indent: 6px;

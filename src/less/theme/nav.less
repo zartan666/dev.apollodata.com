@@ -1,15 +1,17 @@
 .nav {
-	.background-image(linear-gradient(top, rgba(255,255,255,.96) 0%, rgba(255,255,255,.99) 100%));
+	background-color: @color-primary;
+	color: @color-light;
 
 	.nav-item .link {
 		display: inline-block;
 		line-height: 4rem;
 		margin-top: -.5rem;
+		color: @color-light;
 	}
 
 	.nav-item:hover .link,
 	.nav-item.active .link {
-		color: @color-primary;
+		color: @color-light;
 		text-decoration: none;
 		&:before {
 			content:'';

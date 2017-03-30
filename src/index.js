@@ -9,6 +9,33 @@ ReactDOM.render(
   document.getElementById('code-snippets')
 );
 
+// We don't want to load the Expo embed on mobile devices
+// because we don't have space to show it anyway.
+function loadExpoOnlyOnDesktop() {
+  const bp = 800;
+  let loadedExpo = window.innerWidth >= bp;
+  if (loadedExpo) {
+    loadExpo();
+  }
+
+  $(window).resize(() => {
+    if (! loadedExpo && window.innerWidth >= bp) {
+      loadedExpo = true;
+      loadExpo();
+    }
+  });
+
+  function loadExpo() {
+    // <script async src="https://sketch.expo.io/embed.js"></script>
+    const s = document.createElement('script');
+    s.src = 'https://sketch.expo.io/embed.js';
+    s.async = true;
+    document.head.appendChild(s);
+  }
+}
+
+loadExpoOnlyOnDesktop();
+
 if (location.hash == "#slack"){
     $('.layout').addClass('overlay-open slack');
   }

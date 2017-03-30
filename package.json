@@ -6,7 +6,7 @@
     "react-dom": "^15.3.1"
   },
   "scripts": {
-    "dev": "maw dev",
+    "start": "maw dev",
     "build": "maw build"
   },
   "devDependencies": {
