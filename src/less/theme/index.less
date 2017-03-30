@@ -6,11 +6,10 @@
 	.clearfix;
 
 	.hero-content {
-		.page-margins;
 		.std-xpadding;
 		position: relative;
 
-		padding-top: 5rem;
+		padding-top: 2rem;
 
 		display: flex;
 	}
@@ -22,27 +21,35 @@
 	}
 
 	.desc-section {
-		.font-m3;
-		.type-light;
+		.font-m2;
+		//.type-light;
 		line-height: 1.2;
+		margin-bottom: 2rem;
 	}
 
 	.hero-left {
 		display: inline-block;
 		@media screen and (min-width: @breakpoint) { width: 50% }
 		color: @color-lightest;
-		flex: 1;
+		flex: 0 0 500px;
+		padding: 50px 0px 20px 50px;
 	}
 
 	.hero-right {
-		flex: 1;
+		flex: 1.7;
 		position: relative;
-		margin-left: 50px;
+		margin-left: 80px;
 		text-align: right;
-		width: 50%;
+		padding-right: 50px;
 
 		display: none;
 		@media screen and (min-width: @breakpoint) { display: block }
+		margin-bottom: -20px;
+
+		.expo {
+			box-shadow: 0 2px 5px rgba(0,0,0,.1);
+			border: 1px solid #bbb;
+		}
 	}
 
 	.hero-diagram {
@@ -108,23 +115,14 @@
 	.inline-block-whitespace;
 	text-align: left;
 
-	color: @color-darker;
-
-	background-color: @color-accent-cooler;
-	margin-top: 5rem;
-	padding-top: 0.5rem;
-	padding-bottom: 0.1rem;
-	border-radius: 0.5rem 0.5rem 0 0;
-	.background-image( linear-gradient(from top, @color-accent-coolest 0%, @color-accent-cooler 100%) );
-
-	.guide-buttons {
+	.rest-guides {
 		display: flex;
-		padding: 5px;
 	}
 
 	.item-guide {
 		.transition(all 200ms ease-out);
-		background: @color-lighter;
+		//background: @color-lighter;
+		border: 1px solid white;
 		cursor: pointer;
 		height: 5rem;
 		margin-right: 5px;
@@ -132,16 +130,31 @@
 		margin-bottom: 10px;
 		text-align: center;
 		vertical-align: top;
-		width: 90px;
+		background-color: rgba(255, 255, 255, 0.05);
 
 		flex: 1;
 
 		&.double-wide {
-			flex: 2;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.image {
+				margin: 10px;
+			}
+			.title-item {
+				font-size: 20px;
+				vertical-align: middle;
+			}
+			.icon-arrow-right {
+				margin-left: 10px;
+
+				// HAHA using important here sorry
+				font-size: 15px !important;
+			}
 		}
 
 		&:hover {
-			box-shadow: fade(@color-primary, 50%) 0 0 7px 0, fade(@color-primary, 100%) 0 0 0 1px inset ;
+			background-color: rgba(255, 255, 255, 0.2);
 		}
 
 		.image {
@@ -157,7 +170,7 @@
 			.transition(all 150ms ease-out);
 			.font-s1;
 			.type-semibold;
-			color: @color-darkest;
+			color: @color-lighter;
 			display: block;
 			line-height: 1;
 			text-indent: 6px;
