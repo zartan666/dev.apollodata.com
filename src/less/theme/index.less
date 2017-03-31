@@ -167,6 +167,11 @@
 	margin: 10px;
 }
 
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 .picker-guides {
 	.inline-block-whitespace;
 	text-align: left;
@@ -180,6 +185,13 @@
 
 		a {
 			display: none;
+		}
+
+		iframe {
+			opacity: 0;
+			animation: fadein 1s;
+			animation-delay: 2s;
+			animation-fill-mode: forwards;
 		}
 	}
 
