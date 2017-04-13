@@ -22,12 +22,12 @@ const libraries = {
       mutation: 'img/react-native/mutation.gif',
     }
   },
-  'angular2': {
+  'angular': {
     name: 'Angular',
     snippets: {
       language: 'typescript',
-      query: require(`!!raw-loader!./angular2/query.js`),
-      mutation: require(`!!raw-loader!./angular2/mutation.js`),
+      query: require(`!!raw-loader!./angular/query.js`),
+      mutation: require(`!!raw-loader!./angular/mutation.js`),
     },
   },
   'ios': {

@@ -5,7 +5,7 @@ module.exports = {
     description: 'Open source clients, server libraries, and tools for GraphQL. Built for React, Angular, Swift and Java.',
     url_projects_react: 'http://dev.apollodata.com/react',
     url_projects_reactnative: 'http://dev.apollodata.com/react-native',
-    url_projects_angular: 'http://dev.apollodata.com/angular2',
+    url_projects_angular: 'http://dev.apollodata.com/angular',
     url_projects_swift: 'http://dev.apollodata.com/ios',
     url_projects_android: 'http://dev.apollodata.com/android',
     url_projects_server: 'http://dev.apollodata.com/tools',
