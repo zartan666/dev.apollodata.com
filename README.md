@@ -5,7 +5,7 @@ Available at [dev.apollodata.com](http://dev.apollodata.com).
 
 ```
 npm install
-npm run dev
+npm start
 ```
 
 It will open in your browser and refresh on changes. You can find the output in `/build`.

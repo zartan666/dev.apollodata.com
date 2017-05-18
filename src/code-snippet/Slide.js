@@ -7,6 +7,7 @@ const CONTEXT_NAMES = {
   graphql: 'Query',
   schema: 'Schema'
 }
+const activeClassName = cond => cond ? 'active' : ''
 
 export default class Slide extends Component {
   constructor() {
@@ -33,30 +34,30 @@ export default class Slide extends Component {
     const contexts = graphqlSnippet ? CONTEXTS_WITH_GRAPHQL : CONTEXTS;
 
     return (
-      <div className={`slide ${active && 'active'} ${libraryName.toLowerCase().replace(/ /g,"_")}`}>
+      <div className={`slide ${activeClassName(active)} ${libraryName.toLowerCase().replace(/ /g,"_")}`}>
         <div className="snippet">
           <div className="topcap">
             <div className="btn-group toggle">
               {contexts.map(context => (
-                <div key={context} className={`btn ancillary small ${context === pane && 'active'}`} onClick={() => this.setPane(context)}>
+                <div key={context} className={`btn ancillary small ${activeClassName(context === pane)}`} onClick={() => this.setPane(context)}>
                   {CONTEXT_NAMES[context]}
                 </div>
               ))}
             </div>
           </div>
-          <div className={`client ${(pane === 'client') && 'active'}`}>
+          <div className={`client ${activeClassName(pane === 'client')}`}>
             <pre><code className={`language-${snippetLanguage}`}>
               {clientSnippet}
             </code></pre>
           </div>
           {graphqlSnippet &&
-            <div className={`client ${(pane === 'graphql') && 'active'}`}>
+            <div className={`client ${activeClassName(pane === 'graphql')}`}>
               <pre><code className={`language-graphql`}>
                 {graphqlSnippet}
               </code></pre>
             </div>
           }
-          <div className={`schema ${(pane === 'schema') && 'active'}`}>
+          <div className={`schema ${activeClassName(pane === 'schema')}`}>
             <pre><code className={`language-graphql`}>
               {schemaSnippet}
             </code></pre>
